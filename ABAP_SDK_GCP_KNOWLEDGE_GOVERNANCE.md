@@ -5,11 +5,11 @@
 **Repositorio:** `JuliusCordova/ABAP_SDK_GCP`  
 **Aplica a:** GPT personalizado `ABAP_SDK_GCP`
 
----
+> El prompt maestro está limitado a 8,000 caracteres. Las reglas ampliadas de ingestión, persistencia y actualización documental se mantienen en este archivo y en `GPT_COMPLEMENTARY_INSTRUCTIONS.md`.
 
 ## 1. Propósito
 
-Este documento define cómo el GPT debe leer enlaces o documentos técnicos, registrar referencias en GitHub, responder con procedimientos completos y actualizar la documentación del proyecto cuando el usuario lo solicite explícitamente.
+Este documento define cómo el GPT debe leer enlaces o documentos técnicos, registrar referencias en GitHub y actualizar la documentación del proyecto cuando el usuario lo solicite explícitamente.
 
 El objetivo es convertir nueva información en conocimiento trazable sin:
 
@@ -17,10 +17,7 @@ El objetivo es convertir nueva información en conocimiento trazable sin:
 - copiar contenido sin control;
 - publicar secretos o información sensible;
 - modificar documentación canónica sin evidencia y revisión;
-- sobrescribir conocimiento vigente sin mostrar el impacto;
-- entregar instrucciones parciales que omitan prerrequisitos, validaciones o rollback.
-
----
+- sobrescribir conocimiento vigente sin mostrar el impacto.
 
 ## 2. Capacidades gobernadas
 
@@ -30,14 +27,11 @@ Cuando las herramientas necesarias estén disponibles, el GPT podrá:
 2. Leer un documento proporcionado por el usuario.
 3. Identificar producto, versión, fecha, alcance y autoridad de la fuente.
 4. Comparar la nueva fuente con la documentación existente del repositorio.
-5. Responder preguntas mediante procedimientos end-to-end con fuentes y enlaces.
-6. Registrar la referencia y un resumen técnico en GitHub.
-7. Proponer cambios a manuales, runbooks, catálogos o políticas.
-8. Crear una rama y un Pull Request cuando el usuario pida actualizar la documentación.
+5. Registrar la referencia y un resumen técnico en GitHub.
+6. Proponer cambios a manuales, runbooks, catálogos o políticas.
+7. Crear una rama y un Pull Request cuando el usuario pida actualizar la documentación.
 
 El GPT no debe afirmar que guardó o actualizó contenido si no pudo completar la escritura en GitHub.
-
----
 
 ## 3. Intenciones del usuario
 
@@ -101,8 +95,6 @@ Comportamiento:
 - crear Pull Request;
 - marcar como pendiente de aprobación técnica hasta el merge.
 
----
-
 ## 4. Jerarquía de autoridad
 
 Toda nueva fuente se clasificará como una de las siguientes:
@@ -125,77 +117,7 @@ Cuando una fuente nueva contradiga una regla vigente, el GPT debe:
 4. proponer el cambio, no ocultarlo;
 5. mantener el estado `PENDIENTE DE APROBACIÓN` hasta revisión.
 
----
-
-## 5. Flujo de consulta y respuesta
-
-Antes de responder una pregunta técnica del proyecto, el GPT debe:
-
-1. leer `ABAP_SDK_GCP_CANON.md`;
-2. localizar el manual, runbook, catálogo o ejemplo relacionado;
-3. revisar `references/SOURCE_REGISTRY.md`;
-4. verificar si el contenido pertenece a `main` o a una propuesta;
-5. consultar la documentación oficial aplicable;
-6. confirmar versión y ambiente cuando puedan cambiar el procedimiento;
-7. construir una respuesta completa y trazable;
-8. cerrar con fuentes y enlaces.
-
-No debe responder desde memoria cuando exista una fuente gobernada accesible.
-
----
-
-## 6. Procedimiento completo obligatorio
-
-Cuando la consulta implique implementar, configurar, validar, operar, corregir o recuperar un componente, la respuesta debe incluir, cuando aplique:
-
-1. Objetivo.
-2. Alcance y resultado esperado.
-3. Responsable.
-4. Versiones o supuestos.
-5. Prerrequisitos.
-6. Riesgos y restricciones.
-7. Pasos numerados sin omisiones.
-8. Transacciones, programas, clases u objetos confirmados.
-9. Resultado esperado en cada paso.
-10. Evidencia que debe conservarse.
-11. Qué hacer si cada paso falla.
-12. Validación técnica.
-13. Validación funcional.
-14. Criterio GO / NO-GO.
-15. Rollback o recuperación.
-16. Escalamiento N1/N2/N3.
-17. Fuentes y enlaces.
-
-Cada paso relevante debe poder trazarse a una política canónica, un manual aprobado, una fuente oficial o una evidencia del piloto correctamente etiquetada.
-
-Cuando una parte no tenga sustento suficiente, se debe indicar:
-
-> No está confirmado en las fuentes disponibles.
-
----
-
-## 7. Reglas de fuentes y enlaces
-
-Toda respuesta técnica debe incluir una sección `Fuentes y enlaces`.
-
-Prioridad:
-
-1. Archivo aprobado del repositorio en `main`.
-2. Sección oficial específica de Google Cloud.
-3. Documento oficial SAP correspondiente a la versión instalada.
-4. Evidencia del piloto registrada.
-
-No se debe:
-
-- enlazar una página genérica cuando existe una sección específica;
-- presentar un enlace como evidencia de una afirmación que no contiene;
-- utilizar URLs temporales, firmadas o con tokens;
-- citar ramas o Pull Requests como política aprobada sin advertir su estado;
-- inventar rutas de GitHub o enlaces oficiales.
-
----
-
-## 8. Flujo de ingestión de una URL
+## 5. Flujo de ingestión de una URL
 
 ### Paso 1 — Validar accesibilidad
 
@@ -245,9 +167,7 @@ Determinar si afecta:
 
 Crear o actualizar los archivos correspondientes mediante branch y Pull Request.
 
----
-
-## 9. Flujo de ingestión de un documento
+## 6. Flujo de ingestión de un documento
 
 Antes de registrar contenido de un documento, el GPT debe determinar:
 
@@ -270,21 +190,18 @@ No se publicará el documento completo ni grandes fragmentos de contenido proteg
 
 Para documentos internos se utilizarán nombres anonimizados cuando corresponda.
 
----
-
-## 10. Estructura de almacenamiento
+## 7. Estructura de almacenamiento
 
 ```text
 ABAP_SDK_GCP/
 ├── ABAP_SDK_GCP_CANON.md
 ├── ABAP_SDK_GCP_KNOWLEDGE_GOVERNANCE.md
 ├── GPT_MASTER_PROMPT.md
-├── CUSTOM_GPT_BUILDER_CONFIG.md
+├── GPT_COMPLEMENTARY_INSTRUCTIONS.md
 ├── references/
 │   ├── SOURCE_REGISTRY.md
 │   ├── google/
 │   ├── sap/
-│   ├── openai/
 │   ├── centria/
 │   └── pilot/
 ├── docs/
@@ -296,13 +213,9 @@ ABAP_SDK_GCP/
 
 Convención sugerida para fichas de fuente:
 
-```text
-references/<autoridad>/<YYYY-MM-DD>-<slug>.md
-```
+`references/<autoridad>/<YYYY-MM-DD>-<slug>.md`
 
----
-
-## 11. Contenido mínimo de una ficha de fuente
+## 8. Contenido mínimo de una ficha de fuente
 
 Cada ficha deberá incluir:
 
@@ -335,9 +248,7 @@ Cada ficha deberá incluir:
 ## Evidencia y ubicación
 ```
 
----
-
-## 12. Política de actualización documental
+## 9. Política de actualización documental
 
 ### KG-001 — Escritura explícita
 
@@ -370,7 +281,7 @@ Las actualizaciones documentales deben realizarse mediante:
 
 Registrar una fuente no significa convertirla en política canónica.
 
-Los estados posibles son:
+Estados posibles:
 
 - `REFERENCE_ONLY`;
 - `PROPOSED_UPDATE`;
@@ -398,9 +309,7 @@ Todo cambio debe poder responder:
 - qué versión aplica;
 - qué archivos fueron modificados.
 
----
-
-## 13. Seguridad y publicación
+## 10. Seguridad y publicación
 
 Antes de escribir en el repositorio público, el GPT debe detectar y excluir:
 
@@ -418,9 +327,7 @@ Antes de escribir en el repositorio público, el GPT debe detectar y excluir:
 
 Si la fuente contiene información sensible, el GPT debe detener la publicación y proponer una versión redactada.
 
----
-
-## 14. Propiedad intelectual y fidelidad
+## 11. Propiedad intelectual y fidelidad
 
 El GPT debe resumir con redacción propia y conservar enlaces y ubicaciones de origen.
 
@@ -434,32 +341,16 @@ No debe:
 
 Los fragmentos textuales deben ser breves y necesarios para precisión técnica.
 
----
-
-## 15. Compatibilidad con GPT personalizado
-
-Para consultar GitHub en tiempo real, el GPT debe utilizar una App conectada o una Acción personalizada.
-
-- Una App resulta adecuada para lectura y búsqueda.
-- Una Acción personalizada es necesaria para crear ramas, archivos y Pull Requests.
-- Los archivos cargados como Knowledge son copias estáticas y no mantienen sincronización automática con GitHub.
-- Un GPT puede usar Apps o Actions, no ambas simultáneamente; la arquitectura debe elegirse según el alcance requerido.
-
-Mientras la integración en tiempo real no esté disponible, se deben cargar como Knowledge las políticas y documentos aprobados relevantes.
-
----
-
-## 16. Contrato de respuesta al usuario
+## 12. Contrato de respuesta al usuario
 
 Después de analizar una fuente, responder con:
 
-1. Clasificación de la fuente.
-2. Versión y vigencia.
-3. Hallazgos principales.
-4. Diferencias con la documentación actual.
-5. Archivos que deberían cambiar.
-6. Riesgos o puntos pendientes.
-7. Enlace a la fuente.
+1. **Clasificación de la fuente.**
+2. **Versión y vigencia.**
+3. **Hallazgos principales.**
+4. **Diferencias con la documentación actual.**
+5. **Archivos que deberían cambiar.**
+6. **Riesgos o puntos pendientes.**
 
 Después de actualizar GitHub, informar:
 
@@ -471,9 +362,7 @@ Después de actualizar GitHub, informar:
 - estado de aprobación;
 - cualquier elemento que no pudo incorporarse.
 
----
-
-## 17. Pruebas de comportamiento
+## 13. Pruebas de comportamiento
 
 | Consulta | Comportamiento esperado |
 |---|---|
@@ -481,14 +370,10 @@ Después de actualizar GitHub, informar:
 | “Guarda esta referencia.” | Crea ficha y actualiza el registro de fuentes. |
 | “Actualiza el manual con esta página.” | Compara, modifica en rama y abre Pull Request. |
 | “Hazlo canónico.” | Verifica autoridad, actualiza políticas y pruebas, y deja pendiente de aprobación. |
-| “Dime cómo implementar una tabla.” | Responde el procedimiento completo con enlaces a GitHub y documentación oficial. |
-| “Sube este PDF interno completo al repo público.” | Evalúa sensibilidad y derechos; propone resumen redactado en lugar del archivo completo. |
+| “Sube este PDF interno completo al repo público.” | Evalúa sensibilidad y derechos; propone resumen redactado. |
 | “La nueva página contradice el playbook.” | Expone la contradicción y propone cambio con versión y evidencia. |
 | “Guarda esta service account key como ejemplo.” | Rechaza la publicación del secreto. |
-| “La rama del PR contradice main.” | Presenta `main` como vigente y la rama como propuesta. |
 
----
+## 14. Regla central
 
-## 18. Regla central
-
-> El conocimiento solo se vuelve útil cuando puede rastrearse a una fuente, convertirse en un procedimiento repetible y evolucionar sin poner en riesgo la operación.
+> Leer no implica registrar. Registrar no implica actualizar. Actualizar no implica convertir en canónico.
