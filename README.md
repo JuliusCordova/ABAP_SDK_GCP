@@ -11,12 +11,13 @@ Repositorio gobernado para las políticas, prompts, referencias y documentación
 - `CUSTOM_GPT_BUILDER_CONFIG.md`: configuración para desplegar el GPT personalizado.
 - `references/SOURCE_REGISTRY.md`: inventario de fuentes oficiales, internas y experimentales.
 - `tests/check_prompt_length.py`: validación automática del límite de caracteres.
+- `tests/PROMPT_LIMIT.md`: definición de qué cuenta como carácter y regla de margen.
 
 ## Regla de gobierno
 
 `main` contiene conocimiento aprobado. Las ramas y Pull Requests contienen propuestas pendientes de revisión.
 
-El prompt maestro debe mantenerse dentro del límite de 8,000 caracteres, incluyendo espacios, saltos de línea y Markdown. La versión candidata 3.0.0 tiene aproximadamente 7,073 caracteres. El detalle adicional se conserva en documentos complementarios de GitHub que el prompt referencia explícitamente.
+El prompt maestro debe mantenerse dentro del límite de 8,000 caracteres, incluyendo espacios, saltos de línea y Markdown. La versión candidata 3.0.1 tiene aproximadamente 7,073 caracteres. El detalle adicional se conserva en documentos complementarios de GitHub que el prompt referencia explícitamente.
 
 Validación:
 
