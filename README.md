@@ -16,7 +16,7 @@ Repositorio gobernado para las políticas, prompts, referencias y documentación
 
 `main` contiene conocimiento aprobado. Las ramas y Pull Requests contienen propuestas pendientes de revisión.
 
-El prompt maestro debe mantenerse dentro del límite de 8,000 caracteres, incluyendo espacios, saltos de línea y Markdown. El detalle adicional se conserva en documentos complementarios de GitHub que el prompt referencia explícitamente.
+El prompt maestro debe mantenerse dentro del límite de 8,000 caracteres, incluyendo espacios, saltos de línea y Markdown. La versión candidata 3.0.0 tiene aproximadamente 7,073 caracteres. El detalle adicional se conserva en documentos complementarios de GitHub que el prompt referencia explícitamente.
 
 Validación:
 
