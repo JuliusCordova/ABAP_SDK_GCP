@@ -17,3 +17,7 @@ Repositorio gobernado para las políticas, prompts, referencias y documentación
 ## Respuestas del GPT
 
 Las respuestas técnicas deben incluir procedimientos completos, validación end-to-end, criterios GO/NO-GO, rollback y enlaces a la documentación gobernada y oficial.
+
+## Integración GitHub
+
+La consulta en tiempo real requiere una App conectada o una Acción personalizada. Los archivos cargados como Knowledge son copias estáticas y no se sincronizan automáticamente con el repositorio.
