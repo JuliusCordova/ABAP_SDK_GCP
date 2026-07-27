@@ -8,7 +8,7 @@ Repositorio gobernado para las políticas, prompts, referencias y documentación
 - `ABAP_SDK_GCP_KNOWLEDGE_GOVERNANCE.md`: ingestión y actualización documental.
 - `GPT_MASTER_PROMPT.md`: instrucciones maestras del GPT.
 - `CUSTOM_GPT_BUILDER_CONFIG.md`: configuración para desplegar el GPT personalizado.
-- `references/SOURCE_REGISTRY.md`: inventario de fuentes.
+- `references/SOURCE_REGISTRY.md`: inventario de fuentes oficiales, internas y experimentales.
 
 ## Regla de gobierno
 
