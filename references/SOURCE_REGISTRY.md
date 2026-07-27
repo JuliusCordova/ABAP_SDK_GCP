@@ -19,6 +19,9 @@
 | SRC-GOOG-002 | OFICIAL GOOGLE | BigQuery Toolkit for SAP replication | BigQuery Toolkit for SAP | latest / confirmar versión instalada | No confirmada | 2026-07-27 | https://cloud.google.com/sap/docs/abap-sdk/on-premises-or-any-cloud/latest/bq-toolkit-for-sap-replication | REFERENCE_ONLY | Pendiente | Referencia base del canon. |
 | SRC-GOOG-003 | OFICIAL GOOGLE | BigQuery Toolkit for SAP operations | BigQuery Toolkit for SAP | latest / confirmar versión instalada | No confirmada | 2026-07-27 | https://cloud.google.com/sap/docs/abap-sdk/on-premises-or-any-cloud/latest/bq-toolkit-for-sap-operations | REFERENCE_ONLY | Pendiente | Referencia base del canon. |
 | SRC-GOOG-004 | OFICIAL GOOGLE | ABAP SDK for Google Cloud documentation | ABAP SDK for Google Cloud | latest / confirmar versión instalada | No confirmada | 2026-07-27 | https://cloud.google.com/sap/docs/abap-sdk | REFERENCE_ONLY | Pendiente | Portal oficial de documentación. |
+| SRC-OPENAI-001 | OFICIAL OPENAI | Crear y editar GPTs | GPTs personalizados | Vigente a la fecha de consulta | 2026-07 | 2026-07-27 | https://help.openai.com/es-419/articles/8554397-crear-y-editar-gpts | REFERENCE_ONLY | Pendiente | Sustenta separación entre instrucciones y archivos de Knowledge. |
+| SRC-OPENAI-002 | OFICIAL OPENAI | Configurar acciones en GPTs | GPT Actions | Vigente a la fecha de consulta | 2026-07 | 2026-07-27 | https://help.openai.com/es-419/articles/9442513-configuring-actions-in-gpts | REFERENCE_ONLY | Pendiente | Sustenta integración con APIs externas mediante autenticación y esquema OpenAPI. |
+| SRC-OPENAI-003 | OFICIAL OPENAI | Conectar GitHub a ChatGPT | GitHub app | Vigente a la fecha de consulta | 2026-07 | 2026-07-27 | https://help.openai.com/es-es/articles/11145903-connecting-github-to-chatgpt | REFERENCE_ONLY | Pendiente | Sustenta consulta de repositorios GitHub conectados. |
 
 ## Reglas de mantenimiento
 
