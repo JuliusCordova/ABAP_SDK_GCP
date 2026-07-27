@@ -1,6 +1,6 @@
 # Configuración del GPT personalizado — ABAP_SDK_GCP
 
-**Versión:** 1.1.0  
+**Versión:** 1.2.0  
 **Estado:** Propuesta para revisión  
 **Repositorio canónico:** `JuliusCordova/ABAP_SDK_GCP`
 
@@ -20,10 +20,12 @@ Copiar íntegramente en el campo **Instructions** el contenido vigente de:
 
 Reglas de tamaño:
 
-- El prompt maestro no puede superar 8,000 palabras.
+- El prompt maestro no puede superar **8,000 caracteres**, incluyendo espacios, saltos de línea y Markdown.
+- Mantener un margen operativo; no diseñarlo exactamente al límite.
 - El contenido ampliado debe permanecer en `GPT_COMPLEMENTARY_INSTRUCTIONS.md` y en los documentos gobernados del repositorio.
-- El prompt maestro debe mencionar explícitamente los documentos complementarios que el GPT debe consultar.
-- No duplicar en el campo Instructions el contenido completo de los documentos complementarios.
+- El prompt maestro debe mencionar explícitamente los documentos complementarios que debe consultar.
+- No duplicar en Instructions el contenido completo de los documentos complementarios.
+- Antes de publicar, ejecutar `python tests/check_prompt_length.py`.
 
 Mientras el Pull Request no haya sido aprobado, la versión de `feature/knowledge-ingestion-workflow` es una propuesta. Después del merge, el GPT debe consultar `main`.
 
@@ -144,15 +146,16 @@ Documentación oficial base:
 
 El GPT se considera listo cuando:
 
-1. El prompt maestro tiene 8,000 palabras o menos.
-2. Menciona y consulta el documento complementario.
-3. Responde un procedimiento completo con prerrequisitos, pasos, evidencias, GO/NO-GO, rollback y enlaces.
-4. Consulta primero el canon en GitHub.
-5. Distingue `main` de una rama o PR no aprobado.
-6. No presenta un objeto `Z*` como estándar.
-7. Incluye enlaces oficiales específicos.
-8. No reinicializa DELTA sin diagnóstico.
-9. No escribe en GitHub sin solicitud explícita.
-10. Al actualizar documentación, crea rama y Pull Request.
-11. No expone secretos o datos sensibles.
-12. Informa cuando una respuesta no está confirmada por las fuentes disponibles.
+1. El prompt maestro tiene **8,000 caracteres o menos**.
+2. La validación `python tests/check_prompt_length.py` termina correctamente.
+3. El prompt menciona y consulta el documento complementario.
+4. Responde un procedimiento completo con prerrequisitos, pasos, evidencias, GO/NO-GO, rollback y enlaces.
+5. Consulta primero el canon en GitHub.
+6. Distingue `main` de una rama o PR no aprobado.
+7. No presenta un objeto `Z*` como estándar.
+8. Incluye enlaces oficiales específicos.
+9. No reinicializa DELTA sin diagnóstico.
+10. No escribe en GitHub sin solicitud explícita.
+11. Al actualizar documentación, crea rama y Pull Request.
+12. No expone secretos o datos sensibles.
+13. Informa cuando una respuesta no está confirmada por las fuentes disponibles.
