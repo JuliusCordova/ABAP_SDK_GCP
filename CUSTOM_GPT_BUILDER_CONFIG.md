@@ -1,6 +1,6 @@
 # Configuración del GPT personalizado — ABAP_SDK_GCP
 
-**Versión:** 1.2.0  
+**Versión:** 1.2.1  
 **Estado:** Propuesta para revisión  
 **Repositorio canónico:** `JuliusCordova/ABAP_SDK_GCP`
 
@@ -26,6 +26,8 @@ Reglas de tamaño:
 - El prompt maestro debe mencionar explícitamente los documentos complementarios que debe consultar.
 - No duplicar en Instructions el contenido completo de los documentos complementarios.
 - Antes de publicar, ejecutar `python tests/check_prompt_length.py`.
+
+La versión 3.0.0 del prompt maestro fue diseñada con aproximadamente **7,073 caracteres**, dejando margen frente al límite.
 
 Mientras el Pull Request no haya sido aprobado, la versión de `feature/knowledge-ingestion-workflow` es una propuesta. Después del merge, el GPT debe consultar `main`.
 
